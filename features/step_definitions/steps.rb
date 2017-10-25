@@ -33,3 +33,30 @@ Given /^I am on welcome screen$/ do
   end
   sleep(4)
 end
+
+Then /^I select Transports$/ do
+  if  $driver.find_elements(:xpath, '//android.widget.TextView[contains(@text, "Transports")]')
+      $driver.find_elements(:xpath, '//android.widget.TextView[contains(@text, "Transports")]').click()
+  end
+end
+
+Then /^I print in console$/ do
+  print obj $driver.find_elements(:xpath, '//android.widget.TextView[contains(@text, "Transports")]')
+end 
+
+Then /^I press back$/ do
+  $driver.back
+end
+
+
+Then /^I select menu button$/ do
+  if $driver.find_elements(:id, 'Menu opened').any?
+    $driver.find_element(:id, 'Menu opened').click
+  end
+end
+
+Then /^I click Meklesanas filtri$/ do
+  if $driver.find_elements(:id, 'Menu opened').any?
+    $driver.find_element(:id, 'Menu opened').click
+  end
+end
