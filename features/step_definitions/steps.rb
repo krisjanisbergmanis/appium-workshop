@@ -35,13 +35,13 @@ Given /^I am on welcome screen$/ do
 end
 
 Then /^I select Transports$/ do
-  if  $driver.find_elements(:xpath, '//android.widget.TextView[contains(@text, "Transports")]')
-      $driver.find_elements(:xpath, '//android.widget.TextView[contains(@text, "Transports")]').click()
+  if  $driver.find_element(:xpath, '//android.widget.TextView[contains(@text, "Transports")]').displayed?
+      $driver.find_element(:xpath, '//android.widget.TextView[contains(@text, "Transports")]').click
   end
 end
 
 Then /^I print in console$/ do
-  print obj $driver.find_elements(:xpath, '//android.widget.TextView[contains(@text, "Transports")]')
+  print $driver.find_element(:xpath, '//android.widget.TextView[contains(@text, "Transports")]')
 end 
 
 Then /^I press back$/ do
@@ -50,13 +50,15 @@ end
 
 
 Then /^I select menu button$/ do
-  if $driver.find_elements(:id, 'Menu opened').any?
+  if $driver.find_element(:id, 'Menu opened').displayed?
     $driver.find_element(:id, 'Menu opened').click
   end
+  sleep(4)
 end
 
 Then /^I click Meklesanas filtri$/ do
-  if $driver.find_elements(:id, 'Menu opened').any?
-    $driver.find_element(:id, 'Menu opened').click
+  if $driver.find_element(:xpath, '//android.widget.TextView[contains(@text, "Transports")]').displayed?
+    $driver.find_element(:xpath, '//android.widget.TextView[contains(@text, "Transports")]').click
   end
+  sleep(4)
 end
