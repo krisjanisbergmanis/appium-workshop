@@ -22,6 +22,26 @@
 # https://www.relishapp.com/rspec/rspec-expectations/docs
 
 
-Given /^I am on welcome screen$/ do
+Given /^I am on create filter page$/ do
  @pages.page_intro.close_intro_if_visible
+ @pages.page_create_filter.visible?
 end
+
+Given /^I open Transports$/ do
+    @pages.page_create_filter.open_category("Transports")
+    sleep (3)
+end
+
+And /^I open (.*?) page_sub_category$/ do |name|
+    @pages.page_sub_category.open_category(name)
+    sleep (3)
+end
+
+And /^I scroll to (.*?) page_sub_category$/ do |name|
+    @pages.page_sub_category.scroll_to_next(name)
+    sleep (3)
+end
+
+#And /^I open Volvo page_sub_category$/ do 
+ #   @pages.page_sub_category.open_category("Volvo")
+#end
