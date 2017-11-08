@@ -27,7 +27,7 @@ Given /^I am on create filter page$/ do
  @pages.page_create_filter.visible?
 end
 
-Given /^I open Transports$/ do
+When /^I open Transports$/ do
     @pages.page_create_filter.open_category("Transports")
     sleep (3)
 end
@@ -42,6 +42,6 @@ And /^I scroll to (.*?) page_sub_category$/ do |name|
     sleep (3)
 end
 
-#And /^I open Volvo page_sub_category$/ do 
- #   @pages.page_sub_category.open_category("Volvo")
-#end
+Then /^I check if visible$/ do 
+    @pages.page_parameters.visible?
+end
