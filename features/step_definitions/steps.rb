@@ -42,6 +42,10 @@ And /^I scroll to (.*?) page_sub_category$/ do |name|
     sleep (3)
 end
 
-Then /^I check if visible$/ do 
+Then /^I am on parameters page$/ do 
     @pages.page_parameters.visible?
+end
+
+And /^I add all parameters$/ do
+    @pages.page_parameters.send_keys(send_keys)
 end

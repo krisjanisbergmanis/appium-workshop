@@ -9,4 +9,5 @@ Scenario: Signup
     And I scroll to Volvo V70 page_sub_category
     And I open Volvo V70 page_sub_category
     And I open Pērk page_sub_category
-    Then I check if visible
+    Then I am on parameters page
+    And I add all parameters

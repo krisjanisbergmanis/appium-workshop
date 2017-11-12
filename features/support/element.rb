@@ -15,12 +15,8 @@ class Element
     $driver.find_element(@value[:type], @value[:value]).click
   end
 
-  def click_by_text(text)
-    $driver.find_element(:xpath, "//*[contains(@text, '#{text}')]").click
-    #find_element(@value[:type], @value[:value])
+  def send_keys(keys)
+    $driver.find_element(@value[:type], @value[:value]).send_keys(keys)
   end
 
-  def scroll_to_exact(text)
-    $driver.scroll_to_exact(text)
-  end
 end
