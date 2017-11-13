@@ -23,5 +23,4 @@ class Element
   def find_sub_element(element)
     $driver.find_element(@value[:type], @value[:value]).find_element(element.value[:type], element.value[:value])
   end
-
 end

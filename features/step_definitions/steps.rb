@@ -45,3 +45,11 @@ Given /^I set filter parameters$/ do
   @pages.page_paremeters.set_parameter("GADS", "1999", "2002")
   @pages.page_paremeters.save_filter
 end
+
+Given /^I select menu$/ do
+  @pages.page_side_menu.select_menu
+end
+
+Given /^I select (.*) menu category$/ do |name|
+  @pages.page_side_menu.select_menu_category(name)
+end

@@ -18,4 +18,9 @@ class Pages
     @page_paremeters ||= ParametersPage.new
     @page_paremeters
   end
+  
+  def page_side_menu
+    @page_side_menu ||= SideMenuPage.new
+    @page_side_menu
+  end
 end
