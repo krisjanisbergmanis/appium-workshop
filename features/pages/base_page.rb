@@ -3,6 +3,10 @@ class BasePage
     $driver.alert_accept
   end
 
+  def alert_deny
+    $driver.alert_deny
+  end
+  
   def hide_keyboard
     $driver.hide_keyboard
   end

@@ -23,8 +23,9 @@
 
 
 Given /^I am on create filter page$/ do
- @pages.page_intro.close_intro_if_visible
- @pages.page_create_filter.visible?
+  @pages.page_create_filter.deny_offer_if_visible
+  @pages.page_intro.close_intro_if_visible
+  @pages.page_create_filter.visible?
 end
 
 
@@ -52,4 +53,12 @@ end
 
 Given /^I select (.*) menu category$/ do |name|
   @pages.page_side_menu.select_menu_category(name)
+end
+
+Given /^I select existing filter$/ do
+  @pages.page_existing_filters.select_existing_filter
+end
+
+Given /^I delete filter$/ do
+  @pages.page_edit_filter.delete_filter
 end

@@ -1,6 +1,6 @@
 Feature: 1. Filter feature
 
-Scenario: Signup
+Scenario: Create filter
     Given I am on create filter page
     When I open on Transports category
     Then I open sub cat Vieglie auto
@@ -10,9 +10,10 @@ Scenario: Signup
     Then I am on parameters page
     And I set filter parameters
 
-Scenario: Open filter
+Scenario: Delete filter
     Given I am on create filter page
     When I select menu
     And I select Meklēšanas filtri menu category
-    #And I select Favorīti menu category
+    And I select existing filter
+    And I delete filter
     

@@ -23,4 +23,14 @@ class Pages
     @page_side_menu ||= SideMenuPage.new
     @page_side_menu
   end
+
+  def page_existing_filters
+    @page_existing_filters ||= ExistingFiltersPage.new
+    @page_existing_filters
+  end
+
+  def page_edit_filter
+    @page_edit_filter ||= EditFilterPage.new
+    @page_edit_filter
+  end
 end
