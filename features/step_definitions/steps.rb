@@ -23,18 +23,20 @@
 
 
 Given /^I am on create filter page$/ do
-  @pages.page_create_filter.deny_offer_if_visible
-  @pages.page_intro.close_intro_if_visible
-  @pages.page_create_filter.visible?
+  @tests.filters_test.close_intro
 end
 
 
-Given /^I open sub cat (.*)$/ do |sub_cat|
-  @pages.page_sub_category.open_sub_category(sub_cat)
+Given /^I open filter params$/ do
+  @tests.filters_test.open_filter_params
+end
+
+Given /^I submit filter$/ do
+  @tests.filters_test.open_filter_params
 end
 
 Given /^I open on Transports category$/ do
-    @pages.page_create_filter.open_category("Transports")
+  @pages.page_create_filter.open_category("Transports")
 end
 
 Given /^I am on parameters page$/ do
