@@ -15,6 +15,6 @@ Scenario: Submit empty filter
     When I open filter params
     Then I submit empty filter
 
-Scenario: Open Setting    #works when separate
+Scenario: Open Settings   
     Given I am on create filter page
     When I select Iestatījumi menu category
