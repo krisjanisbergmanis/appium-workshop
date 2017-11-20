@@ -9,6 +9,7 @@ class ParametersPage < BasePage
     @frame_param_holder = ElementGroup.new(:id, 'param_text_holder')
     @input_parameter_left = Element.new(:id, 'left_param')
     @input_parameter_right = Element.new(:id, 'right_param')
+    #@error = Element.new(:xpath, '//android.widget.TextView[contains(@text, "")]')
   end
 
   def visible?
@@ -23,6 +24,7 @@ class ParametersPage < BasePage
   end
 
   def set_parameter(name, left_param, right_param)
+      visible?
       @frame_parameter.list.each do |element|
         sub_element =   element.find_element(@title_parameter_name.value[:type], @title_parameter_name.value[:value])
       
@@ -37,6 +39,7 @@ class ParametersPage < BasePage
   end
 
   def save_filter
+    @button_apply.visible?
     @button_apply.click
   end
 end

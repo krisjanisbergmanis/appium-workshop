@@ -14,9 +14,9 @@ class Pages
     @page_sub_category
   end
 
-  def page_paremeters
-    @page_paremeters ||= ParametersPage.new
-    @page_paremeters
+  def page_parameters
+    @page_parameters ||= ParametersPage.new
+    @page_parameters
   end
   
   def page_side_menu
@@ -32,5 +32,10 @@ class Pages
   def page_edit_filter
     @page_edit_filter ||= EditFilterPage.new
     @page_edit_filter
+  end
+
+  def page_settings
+      @page_settings ||= SettingsPage.new
+      @page_settings
   end
 end

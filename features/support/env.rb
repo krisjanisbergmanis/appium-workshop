@@ -43,7 +43,7 @@ end
 
 Before do
   @pages = Pages.new
-  @tests = Tests.new pages @pages
+  @tests = Tests.new @pages
   $driver.start_driver
 end
 After do

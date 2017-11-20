@@ -11,21 +11,27 @@ class FilterTest < BasePage
 
     def open_filter_params
         @pages.page_create_filter.open_category("Transports")
-        sub_cats = ["Vieglie auto", "Audi", "Auidi A1", "Visi"]
+        sub_cats = ["Vieglie auto", "BMW", "BMW X5", "Visi"]
         sub_cats.each do |sub_cat|
             @pages.page_sub_category.open_sub_category(sub_cat)
         end
-        @pages.page_paremeters.visible?
+        @pages.page_parameters.visible?
     end
 
     def set_filter_params
-        @pages.page_paremeters.set_name("Test Name")
-        @pages.page_paremeters.set_parameter("GADS", "1999", "2002")
+        @pages.page_parameters.set_name("Test Name")
+        @pages.page_parameters.set_parameter("GADS", "1999", "2002")
         
     end
 
     def submit_filter
         set_filter_params
-        @pages.page_paremeters.save_filter
+        @pages.page_parameters.save_filter
     end
+
+    def submit_empty_filter
+        @pages.page_parameters.save_filter
+        @pages.page_parameters.visible?
+    end
+
   end

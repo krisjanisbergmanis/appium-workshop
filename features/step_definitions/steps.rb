@@ -32,35 +32,21 @@ Given /^I open filter params$/ do
 end
 
 Given /^I submit filter$/ do
-  @tests.filters_test.open_filter_params
-end
-
-Given /^I open on Transports category$/ do
-  @pages.page_create_filter.open_category("Transports")
-end
-
-Given /^I am on parameters page$/ do
-  @pages.page_paremeters.visible?
-end
-
-Given /^I set filter parameters$/ do
-  @pages.page_paremeters.set_name("Test Name")
-  @pages.page_paremeters.set_parameter("GADS", "1999", "2002")
-  @pages.page_paremeters.save_filter
-end
-
-Given /^I select menu$/ do
-  @pages.page_side_menu.select_menu
+  @tests.filters_test.submit_filter
 end
 
 Given /^I select (.*) menu category$/ do |name|
-  @pages.page_side_menu.select_menu_category(name)
-end
-
-Given /^I select existing filter$/ do
-  @pages.page_existing_filters.select_existing_filter
+  @tests.menu_test.select_menu_category(name)
 end
 
 Given /^I delete filter$/ do
-  @pages.page_edit_filter.delete_filter
+  @tests.menu_test.delete_filter
+end
+
+Given /^I open settings$/ do
+  @tests.menu_test.open_settings
+end
+
+Given /^I submit empty filter$/ do
+  @tests.filters_test.submit_empty_filter
 end
