@@ -13,7 +13,7 @@ class FilterTest < BasePage
     def open_filter_params
         @pages.page_create_filter.open_category(@filters.transports.cat)
         @filters.transports.sub_cats.each do |sub_cat|
-            @pages.page_sub_category.open_sub_category(sub_cat)
+          @pages.page_sub_category.open_sub_category(sub_cat)
         end
         @pages.page_parameters.visible?
     end
@@ -22,8 +22,7 @@ class FilterTest < BasePage
         @pages.page_parameters.set_name(@filters.transports.name)
         @filters.transports.params.each do |param|
             @pages.page_parameters.set_parameter(param)
-        end
-        
+        end 
     end
 
     def submit_filter
@@ -35,5 +34,4 @@ class FilterTest < BasePage
         @pages.page_parameters.save_filter
         @pages.page_parameters.visible?
     end
-
   end

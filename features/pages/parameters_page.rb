@@ -9,7 +9,6 @@ class ParametersPage < BasePage
     @frame_param_holder = ElementGroup.new(:id, 'param_text_holder')
     @input_parameter_left = Element.new(:id, 'left_param')
     @input_parameter_right = Element.new(:id, 'right_param')
-    #@error = Element.new(:xpath, '//android.widget.TextView[contains(@text, "")]')
   end
 
   def visible?
@@ -24,22 +23,20 @@ class ParametersPage < BasePage
   end
 
   def set_parameter(param_hash)
-      visible?
-      @frame_parameter.list.each do |element|
-        sub_element =   element.find_element(@title_parameter_name.value[:type], @title_parameter_name.value[:value])
-      
-      if sub_element.text == param_hash['name']
-        print sub_element.text
-        element.find_element(@input_parameter_left.value[:type], @input_parameter_left.value[:value]).send_keys param_hash['left']
-        element.find_element(@input_parameter_right.value[:type], @input_parameter_right.value[:value]).send_keys param_hash['right']
-        break
-      end
+    @frame_parameter.list.each do |element|
+      sub_element =   element.find_element(@title_parameter_name.value[:type], @title_parameter_name.value[:value])
+    
+    if sub_element.text == param_hash['name']
+      print sub_element.text
+      element.find_element(@input_parameter_left.value[:type], @input_parameter_left.value[:value]).send_keys param_hash['left']
+      element.find_element(@input_parameter_right.value[:type], @input_parameter_right.value[:value]).send_keys param_hash['right']
+      break
     end
-    self.hide_keyboard
   end
+  self.hide_keyboard
+end
 
   def save_filter
-    @button_apply.visible?
     @button_apply.click
   end
 end
