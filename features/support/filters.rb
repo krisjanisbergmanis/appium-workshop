@@ -8,13 +8,32 @@ module Filters
     )
     @transports
   end
+
+  def Filters.ipasumi
+    @ipasumi ||= Filter.new(
+        cat: 'Nekustamie īpašumi',
+        sub_cats: ["Dzīvokļi", "Jūrmala", "Visi", "Visi"],
+        params: [Hash['name' => 'Cena', 'left' => '100', 'right' => '99000']]
+    )
+    @ipasumi
+  end
+
+  def Filters.vakances
+    @ipasumi ||= Filter.new(
+        cat: 'Vakances',
+        sub_cats: ["Apsargs"],
+        params: [Hash['name' => 'Cena']]
+    )
+    @vakances
+  end
 end
 
 class Filter
+  include Filters
   attr_reader :name, :cat, :sub_cats, :params
   def initialize(name: '', cat: '', sub_cats: [], params: [])
     if name == ''
-      @name = 'UIAuto' + DateTime.now.strftime('%Q')
+      @name = 'UIfilter' + DateTime.now.strftime('%Q')
     else
       @name = name
     end

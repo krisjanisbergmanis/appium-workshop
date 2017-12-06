@@ -27,12 +27,12 @@ Given /^I am on create filter page$/ do
 end
 
 
-Given /^I open filter params$/ do
-  @tests.filters_test.open_filter_params
+Given /^I open (.*) filter params$/ do |category|
+  @tests.filters_test.open_filter_params(category)
 end
 
-Given /^I submit filter$/ do
-  @tests.filters_test.submit_filter
+Given /^I submit (.*) filter$/ do |category|
+  @tests.filters_test.submit_filter(category)
 end
 
 Given /^I select (.*) menu category$/ do |name|

@@ -1,20 +1,21 @@
 Feature: 1. Filter feature
 
-Scenario: Create filter
+Scenario: Create Transports filter
     Given I am on create filter page
-    When I open filter params
-    Then I submit filter
+    When I open Transports filter params
+    Then I submit Transports filter
 
-Scenario: Delete filter
+Scenario: Delete Transports filter
     Given I am on create filter page
     When I select Meklēšanas filtri menu category
     And I delete filter
     
-Scenario: Submit empty filter  
+Scenario: Create Nekustamie īpašumi filter
     Given I am on create filter page
-    When I open filter params
-    Then I submit empty filter
+    When I open Nekustamie īpašumi filter params
+    Then I submit Nekustamie īpašumi filter
 
-Scenario: Open Settings   
+Scenario: Create Vakances filter
     Given I am on create filter page
-    When I select Iestatījumi menu category
+    When I open Vakances filter params
+    Then I submit Vakances īpašumi filter

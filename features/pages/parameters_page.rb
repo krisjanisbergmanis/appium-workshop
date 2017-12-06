@@ -25,7 +25,7 @@ class ParametersPage < BasePage
   def set_parameter(param_hash)
     @frame_parameter.list.each do |element|
       sub_element =   element.find_element(@title_parameter_name.value[:type], @title_parameter_name.value[:value])
-    
+  
     if sub_element.text == param_hash['name']
       print sub_element.text
       element.find_element(@input_parameter_left.value[:type], @input_parameter_left.value[:value]).send_keys param_hash['left']
