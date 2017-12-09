@@ -22,7 +22,6 @@ module Filters
     @ipasumi ||= Filter.new(
         cat: 'Vakances',
         sub_cats: ["Apsargs"],
-        params: [Hash['name' => 'Cena']]
     )
     @vakances
   end
