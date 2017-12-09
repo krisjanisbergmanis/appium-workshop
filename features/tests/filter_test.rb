@@ -11,52 +11,27 @@ class FilterTest < BasePage
     end
 
     def open_filter_params(category)
-        case category
-        when 'Transports'
-            @pages.page_create_filter.open_category(@filters.transports.cat)
+            @pages.page_create_filter.open_category(@filters.send(category).cat)
                 @filters.transports.sub_cats.each do |sub_cat|
                 @pages.page_sub_category.open_sub_category(sub_cat)
                 end
-        when 'Nekustamie īpašumi'
-            @pages.page_create_filter.open_category(@filters.ipasumi.cat)
-            @filters.ipasumi.sub_cats.each do |sub_cat|
-            @pages.page_sub_category.open_sub_category(sub_cat)
-            end
-        when 'Vakances'
-            @pages.page_create_filter.open_category(@filters.vakances.cat)
-            @filters.vakances.sub_cats.each do |sub_cat|
-            @pages.page_sub_category.open_sub_category(sub_cat)
-            end
-        end
         @pages.page_parameters.visible?
     end
 
     def set_filter_params(category)
         case category
-        when 'Transports'
-            @pages.page_parameters.set_name(@filters.transports.name)
+        when 'vakances'
+            @pages.page_parameters.set_name(@filters.send(category).name)
+        else
+            @pages.page_parameters.set_name(@filters.send(category).name)
             @filters.transports.params.each do |param|
                 @pages.page_parameters.set_parameter(param)
             end 
-        when 'Nekustamie īpašumi'
-            @pages.page_parameters.set_name(@filters.ipasumi.name)
-            @filters.ipasumi.params.each do |param|
-                @pages.page_parameters.set_parameter(param)
-            end
-        when 'Vakances'
-            @pages.page_parameters.set_name(@filters.vakances.name)
-        end
+        end 
     end
 
     def submit_filter(category)
-        case category
-        when 'Transports'
-            set_filter_params('Transports')
-        when 'Nekustamie īpašumi'
-            set_filter_params('Nekustamie īpašumi')
-        when 'Vakances'
-            set_filter_params('Vakances')
-        end
+        set_filter_params(category)
         @pages.page_parameters.save_filter
     end
 
