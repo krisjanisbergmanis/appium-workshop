@@ -8,8 +8,8 @@ class MenuTest < BasePage
         @pages.page_side_menu.select_menu_category(name)
     end
 
-    def delete_filter
-        @pages.page_existing_filters.select_existing_filter
+    def delete_filter(category)
+        @pages.page_existing_filters.select_existing_filter(category)
         @pages.page_edit_filter.delete_filter
     end
 

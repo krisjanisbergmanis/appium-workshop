@@ -45,9 +45,6 @@ class FilterTest < BasePage
             end
         when 'Vakances'
             @pages.page_parameters.set_name(@filters.vakances.name)
-            @filters.vakances.params.each do |param|
-                @pages.page_parameters.set_parameter(param)
-            end
         end
     end
 

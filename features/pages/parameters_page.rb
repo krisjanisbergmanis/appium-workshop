@@ -37,6 +37,7 @@ class ParametersPage < BasePage
 end
 
   def save_filter
+    @button_apply.visible?
     @button_apply.click
   end
 end

@@ -19,7 +19,7 @@ module Filters
   end
 
   def Filters.vakances
-    @ipasumi ||= Filter.new(
+    @vakances ||= Filter.new(
         cat: 'Vakances',
         sub_cats: ["Apsargs"],
         params: [Hash['name' => 'Cena']]

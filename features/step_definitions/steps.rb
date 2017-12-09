@@ -39,8 +39,8 @@ Given /^I select (.*) menu category$/ do |name|
   @tests.menu_test.select_menu_category(name)
 end
 
-Given /^I delete filter$/ do
-  @tests.menu_test.delete_filter
+Given /^I delete (.*) filter$/ do |category|
+  @tests.menu_test.delete_filter(category)
 end
 
 Given /^I open settings$/ do
